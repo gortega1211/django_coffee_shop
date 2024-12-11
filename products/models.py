@@ -8,5 +8,8 @@ class Product(models.Model):
     available = models.BooleanField(default=True, verbose_name="Available")
     photo = models.ImageField(upload_to="logos", null=True, blank=True, verbose_name="Photo")
 
+    class Meta:
+        ordering = ["name"]
+
     def __str__(self):
         return self.name
