@@ -4,7 +4,7 @@
 {% endblock %}
 
 {% block content %}
-<form action="{% url "product_add" %}" method="post">
+<form action="{% url 'product_add' %}" method="post">
     {% csrf_token %}
     <h2>Product Form</h2>
     {{ form.as_p }}
