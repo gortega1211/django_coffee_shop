@@ -32,18 +32,19 @@
             </ul>
     
             <div class="col-md-3 text-end">
-                <span>
+                <div class="d-flex flex-row justify-content-end">
                     {% if user.is_authenticated %}
-                        <form method="POST" action="{% url 'logout' %}">
-                            {% csrf_token %}
-                            <span>Hola, {{ user.username }}</span>
-                            <button type="submit" class="btn btn-secondary me-2">Logout</a>
-                        </form>
+                    <span>Hola, {{ user.username }}</span>
+                    <a href="{% url 'my_order' %}" class="btn btn-info mx-2">My Order</a>
+                    <form method="POST" action="{% url 'logout' %}">
+                        {% csrf_token %}
+                        <button type="submit" class="btn btn-danger">Logout</button>
+                    </form>
                     {% else %}
-                        <a href="{% url 'login' %}" class="btn btn-primary me-2">Login</a>
                         <a href="{% url 'signup' %}" class="btn btn-primary me-2">Sign Up</a>
+                        <a href="{% url 'login' %}" class="btn btn-primary me-2">Login</a>
                     {% endif %}
-                </span>
+                </div>
             </div>
         </header>
     </div>
