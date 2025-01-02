@@ -15,6 +15,8 @@ class ProductListView(ListView):
     template_name = "product_list.html"
     context_object_name = "products"
 
+    def get_queryset(self):
+        return Product.objects.filter(available=True)
 
 class ProductFormView(FormView):
     template_name = "product_add.html"

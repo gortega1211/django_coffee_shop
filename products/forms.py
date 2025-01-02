@@ -4,11 +4,11 @@ from .models import Product
 
 
 class ProductForm(forms.Form):
-    name = forms.CharField(max_length=200, label="Name")
-    description = forms.CharField(max_length=300, label="Description")
-    price = forms.DecimalField(max_digits=10, decimal_places=2, label="Price")
-    available = forms.BooleanField(initial=True, label="Available")
-    photo = forms.ImageField(label="Photo", required=False)
+    name = forms.CharField(max_length=200, label="Name", widget=forms.TextInput(attrs={"class": "form-control"}))
+    description = forms.CharField(max_length=300, label="Description", widget=forms.TextInput(attrs={"class": "form-control"}))
+    price = forms.DecimalField(max_digits=10, decimal_places=2, label="Price", widget=forms.NumberInput(attrs={"class": "form-control"}))
+    available = forms.BooleanField(initial=True, label="Available", widget=forms.CheckboxInput(attrs={"class": "form-check-input"}))
+    photo = forms.ImageField(label="Photo", required=False, widget=forms.FileInput(attrs={"class": "form-control"}))
 
     def save(self):
         Product.objects.create(
