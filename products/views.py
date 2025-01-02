@@ -9,20 +9,23 @@ from .models import Product
 from .forms import ProductForm
 from .serializers import ProductSerializer
 
+
 class ProductListView(ListView):
     model = Product
     template_name = "product_list.html"
     context_object_name = "products"
 
+
 class ProductFormView(FormView):
-    template_name="product_add.html"
+    template_name = "product_add.html"
     form_class = ProductForm
     success_url = reverse_lazy("product_list")
 
     def form_valid(self, form):
         form.save()
         return super().form_valid(form)
-    
+
+
 class ProductListAPI(APIView):
     authentication_classes = []
     permission_classes = []

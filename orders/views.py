@@ -5,6 +5,7 @@ from django.urls import reverse_lazy
 from .models import Order
 from .forms import OrderItemForm
 
+
 class MyOrderView(LoginRequiredMixin, DetailView):
     model = Order
     template_name = "my_order.html"
@@ -12,7 +13,8 @@ class MyOrderView(LoginRequiredMixin, DetailView):
 
     def get_object(self, queryset=None):
         return Order.objects.filter(is_active=True, user=self.request.user).first()
-    
+
+
 class CreateOrderItem(LoginRequiredMixin, CreateView):
     template_name = "create_order_item.html"
     form_class = OrderItemForm
