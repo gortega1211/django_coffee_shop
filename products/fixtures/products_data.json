@@ -1,0 +1,38 @@
+[
+    {
+        "model": "products.product",
+        "pk": 1,
+        "fields": {
+            "name": "House Blend",
+            "description": "Coffe house blend",
+            "price": "20",
+            "available": true,
+            "create_date": "2025-01-01T00:00:00Z",
+            "update_date": "2025-01-01T00:00:00Z"
+        }
+    },
+    {
+        "model": "products.product",
+        "pk": 2,
+        "fields": {
+            "name": "Cappuccino",
+            "description": "Coffe Cappuccino",
+            "price": "15",
+            "available": true,
+            "create_date": "2025-01-01T00:00:00Z",
+            "update_date": "2025-01-01T00:00:00Z"
+        }
+    },
+    {
+        "model": "products.product",
+        "pk": 3,
+        "fields": {
+            "name": "Caramel Macchiato",
+            "description": "Coffe Caramel Macchiato",
+            "price": "25",
+            "available": true,
+            "create_date": "2025-01-01T00:00:00Z",
+            "update_date": "2025-01-01T00:00:00Z"
+        }
+    }
+]
